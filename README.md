@@ -4,12 +4,12 @@ Official `kicad/kicad:10.0-full` plus the latest Codex CLI, Node.js 24, Git,
 curl and ripgrep. Codex runs as root with its sandbox and approval prompts
 disabled. The pcbparts MCP at `https://pcbparts.dev/mcp` is configured.
 
-## Build
+## Pull
 
-From this repository:
+Download the published image:
 
 ```powershell
-docker build --pull -t codex-kicad .
+docker pull philipwold/codex-kicad:latest
 ```
 
 ## Run
@@ -17,7 +17,7 @@ docker build --pull -t codex-kicad .
 From any project directory (PowerShell):
 
 ```powershell
-docker run --rm -it --init -v codex-home:/root/.codex -v "${PWD}:/workspace" codex-kicad
+docker run --rm -it --init -v codex-home:/root/.codex -v "${PWD}:/workspace" philipwold/codex-kicad:latest
 ```
 
 This starts Codex directly, with your current directory mounted at `/workspace`
@@ -30,12 +30,14 @@ Defaults, including the MCP server, live in `/etc/codex/config.toml`.
 User and project Codex configuration can override them.
 This is a KiCad CLI environment; no graphical desktop is configured.
 
-## Update
+To update, repeat the pull command and start a new container with the run command.
 
-Rebuild from this repository, then run the same command from your project:
+## Build locally
+
+Alternatively, build from this repository:
 
 ```powershell
-docker build --pull --no-cache -t codex-kicad .
+docker build --pull -t philipwold/codex-kicad:latest .
 ```
 
 The default tracks stable KiCad 10.0 patches and the latest stable Codex package.
