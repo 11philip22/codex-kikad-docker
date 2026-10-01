@@ -10,9 +10,21 @@ USER root
 
 COPY --from=codex /usr/local/ /usr/local/
 RUN apt-get update \
-    && apt-get install --yes --no-install-recommends ca-certificates curl git ripgrep \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /root/.codex /workspace
+    && apt-get install --yes --no-install-recommends \
+        ca-certificates \
+        curl \
+        git \
+        pipx \
+        python3-venv \
+        ripgrep \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV PIPX_HOME=/opt/pipx \
+    PIPX_BIN_DIR=/usr/local/bin
+
+RUN pipx install easyeda2kicad
+
+RUN mkdir -p /root/.codex /workspace
 
 ENV HOME=/root \
     CODEX_HOME=/root/.codex \
