@@ -2,8 +2,9 @@
 
 Official `kicad/kicad:10.0-full` plus the latest Codex CLI, Node.js 24,
 [EasyEDA2KiCad](https://github.com/uPesy/easyeda2kicad.py), Git, curl and ripgrep.
-Codex runs as root with its sandbox and approval prompts disabled. The pcbparts
-MCP at `https://pcbparts.dev/mcp` is configured.
+Codex runs as root with its sandbox and approval prompts disabled. The
+[PCB Parts MCP](https://github.com/Averyy/pcbparts-mcp) server at
+`https://pcbparts.dev/mcp` is configured.
 
 ## Pull
 
