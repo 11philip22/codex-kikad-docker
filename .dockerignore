@@ -1,3 +1,5 @@
 *
 !Dockerfile
 !codex-config.toml
+!skills/
+!skills/**

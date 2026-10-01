@@ -1,0 +1,12 @@
+interface:
+  display_name: "LCSC Parts"
+  short_description: "Find and evaluate components on LCSC"
+  default_prompt: "Use $pcb-parts to find a suitable component on LCSC."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "pcbparts"
+      description: "PCB Parts MCP server"
+      transport: "streamable_http"
+      url: "https://pcbparts.dev/mcp"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "EasyEDA to KiCad"
+  short_description: "Import LCSC parts into KiCad libraries"
+  default_prompt: "Use $easyeda2kicad to import an LCSC part into this KiCad project."

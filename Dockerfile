@@ -30,6 +30,7 @@ ENV HOME=/root \
     CODEX_HOME=/root/.codex \
     TERM=xterm-256color
 COPY codex-config.toml /etc/codex/config.toml
+COPY skills/ /etc/codex/skills/
 WORKDIR /workspace
 ENTRYPOINT []
 CMD ["codex"]
